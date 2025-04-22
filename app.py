@@ -8,6 +8,8 @@ import uuid
 
 from pymongo import MongoClient
 from flask import Flask, render_template, request, redirect, url_for, flash, session
+import pytz
+from datetime import datetime, timedelta
 
 app = Flask(__name__)
 client = MongoClient("mongodb://localhost:27017/")
@@ -831,8 +833,7 @@ def adm_payment_history():
     return render_template('adm_view_cust.html', reservations=reservations)
 
 
-import pytz
-from datetime import datetime, timedelta
+
 
 @app.route('/cancel_reservation/<reservation_id>', methods=['GET'])
 def cancel_reservation(reservation_id):
