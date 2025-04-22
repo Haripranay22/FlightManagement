@@ -12,7 +12,7 @@ import pytz
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient("mongodb+srv://haripranayyadav:EtdLN4ZLjmWT9Z94@cluster0.xmgirkr.mongodb.net/")
 app.secret_key = 'samplekey'
 db = client['flight_management']
 admin_collection = db['admin']
